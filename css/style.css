@@ -1,0 +1,517 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --menu-height: 54px;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    border-bottom: solid 1px rgb(219, 219, 219);
+    height: var(--menu-height);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 1.25rem;
+    width: 100%;
+    max-width: 935px;
+    margin: 0 auto;
+}
+
+.navigation a:active {
+    opacity: .5;
+}
+
+.icon {
+    padding: 0 11px;
+}
+
+.user-pp img {
+    width: 22px;
+    border-radius: 50%;
+}
+
+.user-pp {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-logo {
+    margin-right: auto;
+    padding-top: 7px;
+}
+
+.search {
+    display: none;
+    width: 215px;
+    height: 28px;
+    border-radius: 3px;
+    color: #8e8e8e;
+    font-size: .75rem;
+    border: solid 1px #dbdbdb;
+    position: absolute;
+    left: calc(50vw - 107.5px);
+}
+
+.search i {
+    font-size: 1rem;
+}
+
+.search-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 215px;
+    height: 28px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.search input {
+    width: 215px;
+    border: 0;
+    outline: 0;
+}
+
+body {
+    padding-top: var(--menu-height);
+}
+
+.user-info {
+    display: flex;
+    padding: 1rem;
+    padding-top: 2rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 935px;
+    margin: 0 auto;
+}
+
+.user-profile {
+    width: 77px;
+    height: 77px;
+    border-radius: 50%;
+
+}
+
+.user-profile-container {
+    margin-right: 2rem;
+}
+
+.user-info-settings {
+    width: calc(100% - 109px);
+}
+
+.username {
+    font-weight: 300;
+    color: #262626;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.up-info-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.up-info {
+    flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    padding: .75rem;
+}
+
+.settings {
+    height: 24px;
+    padding: 0 1rem;
+}
+
+.settings-desktop {
+    display: none;
+}
+
+.btn-edit {
+    width: 100%;
+    padding: 5px;
+    background-color: transparent;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.name-info {
+    padding: 0 1rem;
+    padding-bottom: 1.25rem;
+    border-bottom: solid 1px rgb(219, 219, 219);
+}
+
+.name-info-desktop {
+    display: none;
+}
+
+.name-title {
+    font-size: 1rem;
+    padding-bottom: .5rem;
+}
+
+.stats {
+    border-bottom: solid 1px rgb(219, 219, 219);
+    width: 100%;
+    display: flex;
+    list-style: none;
+    text-align: center;
+}
+
+.stats-item {
+    display: flex;
+    flex-wrap: wrap;
+    color: #8e8e8e;
+    width: 33.33%;
+    padding: 12px;
+}
+
+.stats-item a {
+    text-decoration: none;
+    color: #262626;
+    font-weight: bold;
+    width: 100%;
+}
+
+.stats-item span {
+    width: 100%;
+}
+
+.stats-desktop {
+    display: none;
+    width: 100%;
+}
+
+.tabs-container {
+    display: flex;
+    width: 100%;
+    max-width: 935px;
+    margin: 0 auto;
+}
+
+.tab {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+}
+
+.tab span {
+    display: none;
+}
+
+
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(6.25rem, 293px));
+    justify-content: center;
+    grid-gap: 3px;
+}
+
+.post {
+    cursor: pointer;
+    position: relative;
+    display: block;
+}
+
+.post-image img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+.post-overlay {
+    background-color: rgba(0, 0, 0, .4);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: #fff;
+    text-align: center;
+    transition: all .25s;
+}
+
+.post:hover .post-overlay {
+    display: flex;
+}
+
+.post:active .post-overlay {
+    opacity: .5;
+}
+
+.post-likes, .post-comments {
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: .25rem;
+}
+
+.post-overlay p {
+    display: inline-block;
+    padding-left: .25rem;
+}
+
+.likes-comments-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-nav {
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ul-footer {
+    list-style: none;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ul-footer li {
+    display: flex;
+}
+
+.footer-link {
+    color: #00376b;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 4px 8px;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    color: #8e8e8e;
+    text-transform: uppercase;
+    padding: .25rem;
+    font-size: 14px;
+}
+
+@media screen and (min-width: 480px) {
+    .username {
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (min-width: 640px){
+
+    .search {
+        display: flex;
+    }
+
+}
+
+@media screen and (min-width: 736px){
+    .post-list {
+        grid-gap: 1.75rem;
+    }
+
+    .post-likes, .post-comments {
+        width: 50%;
+        font-size: 1.25rem;
+        padding: 1rem;
+    }
+
+    .stats {
+        display: none;
+    }
+
+    .name-info {
+        display: none;
+    }
+
+    .user-info {
+        margin-bottom: 28px;
+    }
+
+    .user-profile {
+        width: 150px;
+        height: 150px;
+    }
+
+    .user-profile-container {
+        margin: 0 5%;
+    }
+
+    .btn-edit {
+        width: 95px;
+    }
+
+    .settings { 
+        display: none;
+    }
+    .settings-desktop {
+        display: flex;
+    }
+
+    .up-info {
+        width: 230px;
+    }
+
+    .user-info-settings {
+        display: flex;
+        width: 67%;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    .btn-edit {
+        height: 30px;
+    }
+
+    .settings-desktop {
+        margin-left: 1rem;
+    }
+
+    .stats-desktop {
+        display: flex;
+    }
+
+    .stats-desktop-container {
+        width: 100%;
+        height: 18px;
+    }
+
+    .stats-desktop a:active {
+        opacity: .5;
+    }
+
+    .stats-desktop .stats-item a, .stats-desktop .stats-item span {
+        width: auto;
+    }
+
+    .stats-desktop .stats-item span {
+        padding-left: .5rem;
+        color: #262626;
+    }
+    
+    .up-info-container {
+        height: 56px;
+        align-items: center;
+    }
+
+    .up-info {
+        padding-left: 0;
+    }
+
+    .stats-desktop .stats-item {
+        width: auto;
+        padding: 0;
+        margin-right: 40px;
+    }
+
+    .name-info-desktop {
+        display: block;
+    }
+
+    .tabs-container {
+        border-top: solid 1px #dbdbdb;
+        justify-content: center;
+    }
+
+    .tab {
+        width: auto;
+        padding: 19.5px 0;
+        margin-right: 60px;
+        text-decoration: none;
+        color: #8e8e8e;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .tab:active {
+        opacity: .5;
+    }
+
+    .tab svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .tab span {
+        margin-left: 6px;
+        display: flex;
+    }
+
+    .tab:last-child {
+        margin: 0;
+    }
+
+    .tab:nth-child(1) {
+        border-top: solid 1px #262626;
+        color: #262626;
+    }
+
+    .tab:nth-child(1) svg {
+        fill: #262626;
+    }
+}
+
+@media screen and (min-width: 876px) {
+    .footer-nav {
+        justify-content: flex-start;
+        padding: 38px 0;
+    }
+
+    .ul-footer {
+        width: 100%;
+        max-width: 1012px;
+        justify-content: flex-start;
+    }
+    .copyright {
+        max-width: 1012px;
+        text-align: left;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 935px) {
+    .navigation {
+        padding: 0;
+    }
+}
